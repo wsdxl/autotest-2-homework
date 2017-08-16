@@ -30,27 +30,27 @@
 //     b++;
 // }while(b<10)
 
-let day = '周六'
+let day = new Date().getDay();
 switch (day) {
-    case '周一':
+    case 1:
         console.log('今天是周一');
         break;
-    case '周二':
+    case 2:
         console.log('今天是周二');
         break;
-    case '周三':
+    case 3:
         console.log('今天是周三');
         break;
-    case '周四':
+    case 4:
         console.log('今天是周四');
         break;
-    case '周五':
+    case 5:
         console.log('今天是周五');
         break;
-    case '周六':
+    case 6:
         console.log('今天是周六');
         break;
-    case '周日':
+    case 0:
         console.log('今天是周日');
         break;
     default:

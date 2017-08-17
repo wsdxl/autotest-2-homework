@@ -1,3 +1,9 @@
+/**
+ * 浏览器多窗口切换
+ * getAllWindowHandles() 获取所有窗口
+ * swithTo() 切换窗口
+ */
+
 require('chromedriver');
 let webdriver = require('selenium-webdriver');
 let By = webdriver.By;

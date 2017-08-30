@@ -1,0 +1,22 @@
+require('chromedriver')
+const webdriver=require('selenium-webdriver')
+let until=webdriver.until;
+const driver=new webdriver.Builder().forBrowser('chrome').build()
+driver.get('http://192.168.75.130:3000/')
+driver.manage().window().maximize()
+driver.findElement({linkText:'登录'}).click();
+driver.findElement({id:'name'}).sendKeys('abcduxiaolei');
+driver.findElement({id:'pass'}).sendKeys('abc4862556');
+driver.findElement({css:'.span-primary'}).click();  //登录流程
+driver.findElement({id:'create_topic_btn'}).click(); // 发布话题
+driver.findElement({id:'tab-value'}).click();
+driver.findElement({css:'#tab-value>option:nth-child(2)'}).click() //选择板块nth-child(i)
+// driver.findElement({xpath:'//*[@id="tab-value"]/option[2]'}).click();
+driver.findElement({id:'title'}).sendKeys('今天好像有雨');
+driver.findElement({css:'.eicon-image'}).click();
+driver.findElement({name:'file'}).sendKeys('E://01.png');
+driver.sleep(4000);
+driver.findElement({css:'.CodeMirror-scroll'}).click();// 进入div大块
+let exec=driver.findElement({xpath:'//*[@id="create_topic_form"]/fieldset/div/div/div[2]/div[6]/div[2]'});// div语句块  
+driver.actions().mouseMove(exec).sendKeys('大家注意天气哈').perform(); //actions方式
+driver.findElement({className:'span-primary submit_btn'}).submit();
